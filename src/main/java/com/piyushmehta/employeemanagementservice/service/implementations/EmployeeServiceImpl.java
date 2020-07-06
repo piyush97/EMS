@@ -1,6 +1,7 @@
-package com.piyushmehta.employeemanagementservice.service;
+package com.piyushmehta.employeemanagementservice.service.implementations;
 
 import com.piyushmehta.employeemanagementservice.dto.Employee;
+import com.piyushmehta.employeemanagementservice.service.EmployeeService;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.stereotype.Service;

@@ -9,16 +9,16 @@ import org.springframework.stereotype.Service;
  * The type Employee service.
  */
 @Service
-public class EmployeeServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService {
   /**
    * The Employee list.
    */
   List<Employee> employeeList =
-  Arrays.asList(
-      new Employee(1,"Tech",
-          "Mehta"),
-        new Employee(2,"Tech","Mehta")
-    );
+      Arrays.asList(
+          new Employee(1, "Tech",
+              "Mehta"),
+          new Employee(2, "Tech", "Mehta")
+      );
 
   @Override
   public List<Employee> getAllEmployee() {

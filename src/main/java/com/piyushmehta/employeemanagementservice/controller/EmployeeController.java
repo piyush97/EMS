@@ -2,8 +2,6 @@ package com.piyushmehta.employeemanagementservice.controller;
 
 import com.piyushmehta.employeemanagementservice.dto.Employee;
 import com.piyushmehta.employeemanagementservice.service.EmployeeService;
-import com.piyushmehta.employeemanagementservice.service.EmployeeServiceImpl;
-import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

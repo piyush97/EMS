@@ -15,7 +15,11 @@ public class Employee {
    * @param departmentName the department name
    * @param employeeName   the employee name
    */
-  public Employee(final int employeeId, final String departmentName, final String employeeName) {
+  public Employee(
+      final int employeeId,
+      final String departmentName,
+      final String employeeName
+  ) {
     super();
     this.employeeId = employeeId;
     this.departmentName = departmentName;

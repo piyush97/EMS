@@ -38,7 +38,7 @@ public class EmployeeController {
    * @return the list
    */
   @RequestMapping("/employees")
-  public List<Employee> getAllEmployees(){
+  public List<Employee> getAllEmployees() {
     return employeeService.getAllEmployee();
   }
 
@@ -49,7 +49,7 @@ public class EmployeeController {
    * @return the employee
    */
   @RequestMapping("/employees/{employeeId}")
-  public Employee getEmployeeById(@PathVariable("employeeId") int employeeId){
+  public Employee getEmployeeById(@PathVariable("employeeId") int employeeId) {
     return employeeService.getEmployeeById(employeeId);
   }
 }

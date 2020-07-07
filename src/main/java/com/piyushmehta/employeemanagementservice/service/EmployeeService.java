@@ -43,4 +43,6 @@ public interface EmployeeService {
    * @param empId the emp id
    */
   void deleteEmployee(int empId);
+
+  List<Employee> getEmployeeByDepartment(String departmentName);
 }

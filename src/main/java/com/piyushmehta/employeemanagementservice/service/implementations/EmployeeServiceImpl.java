@@ -3,8 +3,6 @@ package com.piyushmehta.employeemanagementservice.service.implementations;
 import com.piyushmehta.employeemanagementservice.dao.EmployeeDAO;
 import com.piyushmehta.employeemanagementservice.dto.Employee;
 import com.piyushmehta.employeemanagementservice.service.EmployeeService;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,5 +39,10 @@ public class EmployeeServiceImpl implements EmployeeService {
   @Override
   public void deleteEmployee(final int empId) {
     employeeDAO.deleteById(empId);
+  }
+
+  @Override
+  public List<Employee> getEmployeeByDepartment(final String departmentName) {
+  return employeeDAO.findBydepartmentName(departmentName);
   }
 }

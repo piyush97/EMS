@@ -93,7 +93,7 @@ public class EmployeeController {
    * @param departmentName the department name
    * @return the employee by department name
    */
-  @RequestMapping(method = RequestMethod.GET, value = "/employees/{departmentName}")
+  @RequestMapping(method = RequestMethod.GET, value = "/department/{departmentName}")
   public List<Employee> getEmployeeByDepartmentName(@PathVariable("departmentName") String departmentName){
     return employeeService.getEmployeeByDepartment(departmentName);
   }

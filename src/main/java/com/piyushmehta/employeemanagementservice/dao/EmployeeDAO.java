@@ -10,5 +10,11 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface EmployeeDAO extends JpaRepository<Employee, Integer> {
+  /**
+   * Find bydepartment name list.
+   *
+   * @param departmentName the department name
+   * @return the list
+   */
   List<Employee> findBydepartmentName(String departmentName);
 }

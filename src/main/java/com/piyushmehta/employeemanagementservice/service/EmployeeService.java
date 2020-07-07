@@ -44,5 +44,11 @@ public interface EmployeeService {
    */
   void deleteEmployee(int empId);
 
+  /**
+   * Gets employee by department.
+   *
+   * @param departmentName the department name
+   * @return the employee by department
+   */
   List<Employee> getEmployeeByDepartment(String departmentName);
 }

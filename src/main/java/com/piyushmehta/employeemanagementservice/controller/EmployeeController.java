@@ -86,6 +86,13 @@ public class EmployeeController {
   {
     employeeService.updateEmployee(employee, empId);
   }
+
+  /**
+   * Gets employee by department name.
+   *
+   * @param departmentName the department name
+   * @return the employee by department name
+   */
   @RequestMapping(method = RequestMethod.GET, value = "/employees/{departmentName}")
   public List<Employee> getEmployeeByDepartmentName(@PathVariable("departmentName") String departmentName){
     return employeeService.getEmployeeByDepartment(departmentName);

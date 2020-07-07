@@ -23,4 +23,8 @@ public interface EmployeeService {
   Employee getEmployeeById(int employeeId);
 
   void addEmployee(Employee employee);
+
+  void updateEmployee(Employee employee, int empId);
+
+  void deleteEmployee(int empId);
 }

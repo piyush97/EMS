@@ -1,10 +1,17 @@
 package com.piyushmehta.employeemanagementservice.dto;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * The type Employee.
  */
+@Entity
 public class Employee {
+  @Id @GeneratedValue
   private int employeeId;
+
   private String departmentName;
   private String employeeName;
 

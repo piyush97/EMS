@@ -18,6 +18,11 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	//	JPA
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+	// MySQL
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.20'
+
 }
 
 test {

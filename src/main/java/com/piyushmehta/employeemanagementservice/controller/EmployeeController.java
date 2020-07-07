@@ -5,7 +5,6 @@ import com.piyushmehta.employeemanagementservice.service.EmployeeService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -86,5 +85,16 @@ public class EmployeeController {
   public void updateEmployee(@RequestBody Employee employee, @PathVariable("empId") int empId)
   {
     employeeService.updateEmployee(employee, empId);
+  }
+
+  /**
+   * Gets employee by department name.
+   *
+   * @param departmentName the department name
+   * @return the employee by department name
+   */
+  @RequestMapping(method = RequestMethod.GET, value = "/department/{departmentName}")
+  public List<Employee> getEmployeeByDepartmentName(@PathVariable("departmentName") String departmentName){
+    return employeeService.getEmployeeByDepartment(departmentName);
   }
 }

@@ -2,6 +2,7 @@ package com.piyushmehta.employeemanagementservice.service.implementations;
 
 import com.piyushmehta.employeemanagementservice.dto.Employee;
 import com.piyushmehta.employeemanagementservice.service.EmployeeService;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -15,11 +16,11 @@ public class EmployeeServiceImpl implements EmployeeService {
    * The Employee list.
    */
   List<Employee> employeeList =
-      Arrays.asList(
+      new ArrayList<>(Arrays.asList(
           new Employee(1, "Tech",
               "Mehta"),
           new Employee(2, "Tech", "Mehta")
-      );
+      ));
 
   @Override
   public List<Employee> getAllEmployee() {
@@ -29,5 +30,10 @@ public class EmployeeServiceImpl implements EmployeeService {
   @Override
   public Employee getEmployeeById(final int employeeId) {
     return employeeList.stream().filter(e -> e.getEmployeeId() == employeeId).findFirst().get();
+  }
+
+  @Override
+  public void addEmployee(final Employee employee) {
+    employeeList.add(employee);
   }
 }

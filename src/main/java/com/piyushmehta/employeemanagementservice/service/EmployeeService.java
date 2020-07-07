@@ -21,4 +21,6 @@ public interface EmployeeService {
    * @return the employee by id
    */
   Employee getEmployeeById(int employeeId);
+
+  void addEmployee(Employee employee);
 }

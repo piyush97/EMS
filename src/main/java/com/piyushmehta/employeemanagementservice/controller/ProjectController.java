@@ -49,7 +49,7 @@ public class ProjectController {
    * @param projectId the project id
    * @return the project by id
    */
-  @RequestMapping(method = RequestMethod.GET, value = "/project/{projectId}")
+  @RequestMapping("/project/{projectId}")
   public Project getProjectById(@PathVariable("projectId") int projectId) {
     return projectService.getProjectId(projectId);
   }

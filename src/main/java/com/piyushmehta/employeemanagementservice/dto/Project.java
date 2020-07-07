@@ -1,6 +1,7 @@
 package com.piyushmehta.employeemanagementservice.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 public class Project {
 
   @Id
+  @GeneratedValue
   private int projectId;
 
   private String ProjectName;

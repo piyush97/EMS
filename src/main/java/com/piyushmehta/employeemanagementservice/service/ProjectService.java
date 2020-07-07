@@ -20,4 +20,12 @@ public interface ProjectService {
    * @param project the project
    */
   void addProject(Project project);
+
+  /**
+   * Gets project id.
+   *
+   * @param projectId the project id
+   * @return the project id
+   */
+  Project getProjectId(int projectId);
 }

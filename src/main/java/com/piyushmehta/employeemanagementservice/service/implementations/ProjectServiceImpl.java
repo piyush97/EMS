@@ -39,4 +39,15 @@ public class ProjectServiceImpl implements ProjectService {
     projectDAO.save(project);
   }
 
+  /**
+   * Gets project id.
+   *
+   * @param projectId the project id
+   * @return the project id
+   */
+  @Override
+  public Project getProjectId(final int projectId) {
+    return projectDAO.getOne(projectId);
+  }
+
 }

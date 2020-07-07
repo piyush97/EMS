@@ -1,9 +1,11 @@
 package com.piyushmehta.employeemanagementservice.controller;
 
+import com.piyushmehta.employeemanagementservice.dto.Employee;
 import com.piyushmehta.employeemanagementservice.dto.Project;
 import com.piyushmehta.employeemanagementservice.service.ProjectService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,5 +41,16 @@ public class ProjectController {
   @RequestMapping(method = RequestMethod.POST, value = "/projects")
   public void addProject(@RequestBody Project project){
     projectService.addProject(project);
+  }
+
+  /**
+   * Gets project by id.
+   *
+   * @param projectId the project id
+   * @return the project by id
+   */
+  @RequestMapping(method = RequestMethod.GET, value = "/project/{projectId}")
+  public Project getProjectById(@PathVariable("projectId") int projectId) {
+    return projectService.getProjectId(projectId);
   }
 }

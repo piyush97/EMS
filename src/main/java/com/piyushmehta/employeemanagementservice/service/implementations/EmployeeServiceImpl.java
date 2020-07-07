@@ -1,10 +1,12 @@
 package com.piyushmehta.employeemanagementservice.service.implementations;
 
+import com.piyushmehta.employeemanagementservice.dao.EmployeeDAO;
 import com.piyushmehta.employeemanagementservice.dto.Employee;
 import com.piyushmehta.employeemanagementservice.service.EmployeeService;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,44 +14,32 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-  /**
-   * The Employee list.
-   */
-  List<Employee> employeeList =
-      new ArrayList<>(Arrays.asList(
-          new Employee(1, "Tech",
-              "Mehta"),
-          new Employee(2, "Tech", "Mehta")
-      ));
+
+  @Autowired
+  private EmployeeDAO employeeDAO;
 
   @Override
   public List<Employee> getAllEmployee() {
-    return employeeList;
+    return employeeDAO.findAll();
   }
 
   @Override
   public Employee getEmployeeById(final int employeeId) {
-    return employeeList.stream().filter(e -> e.getEmployeeId() == employeeId).findFirst().get();
+    return employeeDAO.getOne(employeeId);
   }
 
   @Override
   public void addEmployee(final Employee employee) {
-    employeeList.add(employee);
+    employeeDAO.save(employee);
   }
 
   @Override
   public void updateEmployee(final Employee employee,final int empId) {
-    for( int i = 0; i < employeeList.size(); i++ ) {
-      Employee e = employeeList.get(i);
-      if(e.getEmployeeId() == empId){
-        employeeList.set(i,employee);
-        return;
-      }
-    }
+    employeeDAO.save(employee);
   }
 
   @Override
   public void deleteEmployee(final int empId) {
-    employeeList.removeIf(employee -> employee.getEmployeeId() == empId);
+    employeeDAO.deleteById(empId);
   }
 }

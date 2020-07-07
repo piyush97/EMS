@@ -1,2 +1,12 @@
+# Server
 server:
   port : 9091
+# Db
+spring:
+  datasource:
+    password: admin_pass
+    url: jdbc:mysql://localhost:3306/employee
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update

@@ -53,17 +53,35 @@ public class EmployeeController {
   public Employee getEmployeeById(@PathVariable("employeeId") int employeeId) {
     return employeeService.getEmployeeById(employeeId);
   }
+
+  /**
+   * Add employee.
+   *
+   * @param employee the employee
+   */
   @RequestMapping(method = RequestMethod.POST, value = "/employees")
   public void addEmployee(@RequestBody Employee employee)
   {
     employeeService.addEmployee(employee);
   }
 
+  /**
+   * Delete employee.
+   *
+   * @param empId the emp id
+   */
   @RequestMapping(method = RequestMethod.DELETE, value = "/employees/{empId}")
   public void deleteEmployee(@PathVariable("empId") int empId)
   {
     employeeService.deleteEmployee(empId);
   }
+
+  /**
+   * Update employee.
+   *
+   * @param employee the employee
+   * @param empId    the emp id
+   */
   @RequestMapping(method = RequestMethod.PUT, value = "/employees/{empId}")
   public void updateEmployee(@RequestBody Employee employee, @PathVariable("empId") int empId)
   {

@@ -22,9 +22,25 @@ public interface EmployeeService {
    */
   Employee getEmployeeById(int employeeId);
 
+  /**
+   * Add employee.
+   *
+   * @param employee the employee
+   */
   void addEmployee(Employee employee);
 
+  /**
+   * Update employee.
+   *
+   * @param employee the employee
+   * @param empId    the emp id
+   */
   void updateEmployee(Employee employee, int empId);
 
+  /**
+   * Delete employee.
+   *
+   * @param empId the emp id
+   */
   void deleteEmployee(int empId);
 }

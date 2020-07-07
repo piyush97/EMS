@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * The type Employee controller.
  */
-@RestController
+@RestController @RequestMapping("/api")
 public class EmployeeController {
 
   /**

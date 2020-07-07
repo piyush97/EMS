@@ -50,6 +50,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
   @Override
   public void deleteEmployee(final int empId) {
-    employeeList.remove(empId);
+    employeeList.removeIf(employee -> employee.getEmployeeId() == empId);
   }
 }
